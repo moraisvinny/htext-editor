@@ -1,0 +1,20 @@
+<div style="padding: 10px">
+
+  <mat-card>
+    <mat-card-title>
+      EDITOR
+    </mat-card-title>
+    <mat-card-content>
+      <p>
+
+        <button (click)="negrito()">NEGRITO</button>
+        <button (click)="italico()">ITALICO</button>
+      </p>
+      <div contentEditable="true" style="border:1px solid #cccccc;" #entrada (input)="mudou($event.target.innerHTML)">
+
+      </div>
+      <p>HTML GERADO:</p>
+      <div>{{el.nativeElement.innerHTML}}</div>
+    </mat-card-content>
+  </mat-card>
+</div>
