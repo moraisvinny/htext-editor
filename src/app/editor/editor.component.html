@@ -6,13 +6,24 @@
     </mat-card-title>
     <mat-card-content>
       <p>
+        <button class="botao" (click)="executa('bold')">NEGRITO</button>
+        <button class="botao" (click)="executa('italic')">ITALICO</button>
+        <button class="botao" (click)="executa('insertOrderedList')">Lista Ord</button>
+        <button class="botao" (click)="executa('insertUnorderedList')">Lista Ñ Ord</button>
+        <button class="botao" (click)="executa('formatBlock', 'blockquote')">Citação</button>
+        <button class="botao" (click)="executa('justifyCenter')">Centro</button>
+        <button class="botao" (click)="executa('justifyFull')">Justifica</button>
+        <button class="botao" (click)="executa('justifyLeft')">Esquerda</button>
+        <button class="botao" (click)="executa('justifyRight')">Direita</button>
+        <button class="botao" (click)="executa('indent')">indenta</button>
+        <button class="botao" (click)="executa('outdent')">desindenta</button>
+        <button class="botao" (click)="executa('strikeThrough')">riscado</button>
+        <button class="botao" (click)="executa('underline')">sublinhado</button>
 
-        <button (click)="negrito()">NEGRITO</button>
-        <button (click)="italico()">ITALICO</button>
+
+
       </p>
-      <div contentEditable="true" style="border:1px solid #cccccc;" #entrada (input)="mudou($event.target.innerHTML)">
-
-      </div>
+      <div contentEditable="true" class="entrada" #entrada (input)="mudou($event.target.innerHTML)"></div>
       <p>HTML GERADO:</p>
       <div>{{el.nativeElement.innerHTML}}</div>
     </mat-card-content>

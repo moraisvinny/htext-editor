@@ -1,0 +1,21 @@
+.botao {
+  margin-right: 10px !important;
+  margin-bottom:10px !important;
+  display: inline-flex;
+}
+
+.entrada {
+  min-height: 100px;
+  border:1px solid #cccccc;
+  padding:10px;
+  cursor: text;
+
+}
+
+.citacao {
+  width: fit-content;
+  border-radius: 3px;
+  background: #CCCCCC;
+  padding: 5px;
+
+}
