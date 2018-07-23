@@ -6,19 +6,28 @@
     </mat-card-title>
     <mat-card-content>
       <p>
-        <button class="botao" (click)="executa('bold')">NEGRITO</button>
-        <button class="botao" (click)="executa('italic')">ITALICO</button>
-        <button class="botao" (click)="executa('insertOrderedList')">Lista Ord</button>
-        <button class="botao" (click)="executa('insertUnorderedList')">Lista Ñ Ord</button>
-        <button class="botao" (click)="executa('formatBlock', 'blockquote')">Citação</button>
-        <button class="botao" (click)="executa('justifyCenter')">Centro</button>
-        <button class="botao" (click)="executa('justifyFull')">Justifica</button>
-        <button class="botao" (click)="executa('justifyLeft')">Esquerda</button>
-        <button class="botao" (click)="executa('justifyRight')">Direita</button>
-        <button class="botao" (click)="executa('indent')">indenta</button>
-        <button class="botao" (click)="executa('outdent')">desindenta</button>
-        <button class="botao" (click)="executa('strikeThrough')">riscado</button>
-        <button class="botao" (click)="executa('underline')">sublinhado</button>
+        <mat-button-toggle class="botao" #negrito mat-icon-button matTooltip="Negrito" [matTooltipShowDelay]="500" [matTooltipHideDelay]="200"
+          (click)="executa('bold')">
+          <mat-icon aria-label="Negrito">format_bold</mat-icon>
+        </mat-button-toggle>
+
+        <mat-button-toggle class="botao" id="italico" mat-icon-button matTooltip="Itálico" [matTooltipShowDelay]="500" [matTooltipHideDelay]="200"
+          (click)="executa('italic')">
+          <mat-icon aria-label="Negrito">format_italic</mat-icon>
+        </mat-button-toggle>
+
+        <button mat-flat-button class="botao"  (click)="executa('italic')">ITALICO</button>
+        <button mat-flat-button class="botao" (click)="executa('insertOrderedList')">Lista Ord</button>
+        <button mat-flat-button class="botao" (click)="executa('insertUnorderedList')">Lista Ñ Ord</button>
+        <button mat-flat-button class="botao" (click)="executa('formatBlock', 'blockquote')">Citação</button>
+        <button mat-flat-button class="botao" (click)="executa('justifyCenter')">Centro</button>
+        <button mat-flat-button class="botao" (click)="executa('justifyFull')">Justifica</button>
+        <button mat-flat-button class="botao" (click)="executa('justifyLeft')">Esquerda</button>
+        <button mat-flat-button class="botao" (click)="executa('justifyRight')">Direita</button>
+        <button mat-flat-button class="botao" (click)="executa('indent')">indenta</button>
+        <button mat-flat-button class="botao" (click)="executa('outdent')">desindenta</button>
+        <button mat-flat-button class="botao" (click)="executa('strikeThrough')">riscado</button>
+        <button mat-flat-button class="botao" (click)="executa('underline')">sublinhado</button>
 
 
 

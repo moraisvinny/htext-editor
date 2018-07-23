@@ -1,4 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { MatButtonToggle } from '@angular/material/button-toggle';
+
 
 @Component({
   selector: 'app-editor',
@@ -8,6 +10,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 export class EditorComponent implements OnInit {
 
   @ViewChild('entrada') el: ElementRef;
+  @ViewChild('negrito') negrito: MatButtonToggle;
 
   constructor() { }
   citacaoClicada: boolean = false;
@@ -16,8 +19,11 @@ export class EditorComponent implements OnInit {
     this.el.nativeElement.focus();
   }
 
-  executa(comando, opcoes) {
+  executa(comando:string , opcoes) {
+
+
     document.execCommand(comando, false, opcoes);
+    this.negrito.checked = false;
     if(this.citacaoClicada && opcoes == 'blockquote') {
       document.execCommand('formatBlock', false, 'div');
     } else if(opcoes == 'blockquote') {
