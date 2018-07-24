@@ -6,33 +6,68 @@
     </mat-card-title>
     <mat-card-content>
       <p>
-        <mat-button-toggle class="botao" id="negrito" mat-icon-button matTooltip="Negrito" [matTooltipShowDelay]="500" [matTooltipHideDelay]="200"
-          (click)="executa('negrito','bold')">
+        <mat-button-toggle class="botao" id="bold" mat-icon-button matTooltip="Negrito" [matTooltipShowDelay]="500" [matTooltipHideDelay]="200"
+          (click)="executa('bold')">
           <mat-icon aria-label="Negrito">format_bold</mat-icon>
         </mat-button-toggle>
 
-        <mat-button-toggle class="botao" id="italico" mat-icon-button matTooltip="Itálico" [matTooltipShowDelay]="500" [matTooltipHideDelay]="200"
+        <mat-button-toggle class="botao" id="italic" mat-icon-button matTooltip="Itálico" [matTooltipShowDelay]="500" [matTooltipHideDelay]="200"
           (click)="executa('italic')">
-          <mat-icon aria-label="Negrito">format_italic</mat-icon>
+          <mat-icon aria-label="Italico">format_italic</mat-icon>
         </mat-button-toggle>
 
-        <button mat-flat-button class="botao"  (click)="executa('italic')">ITALICO</button>
-        <button mat-flat-button class="botao" (click)="executa('insertOrderedList')">Lista Ord</button>
-        <button mat-flat-button class="botao" (click)="executa('insertUnorderedList')">Lista Ñ Ord</button>
-        <button mat-flat-button class="botao" (click)="executa('formatBlock', 'blockquote')">Citação</button>
-        <button mat-flat-button class="botao" (click)="executa('justifyCenter')">Centro</button>
-        <button mat-flat-button class="botao" (click)="executa('justifyFull')">Justifica</button>
-        <button mat-flat-button class="botao" (click)="executa('justifyLeft')">Esquerda</button>
-        <button mat-flat-button class="botao" (click)="executa('justifyRight')">Direita</button>
-        <button mat-flat-button class="botao" (click)="executa('indent')">indenta</button>
-        <button mat-flat-button class="botao" (click)="executa('outdent')">desindenta</button>
-        <button mat-flat-button class="botao" (click)="executa('strikeThrough')">riscado</button>
-        <button mat-flat-button class="botao" (click)="executa('underline')">sublinhado</button>
+        <mat-button-toggle class="botao" id="underline" mat-icon-button matTooltip="Sublinhado" [matTooltipShowDelay]="500" [matTooltipHideDelay]="200"
+          (click)="executa('underline')">
+          <mat-icon aria-label="Sublinhado">format_underlined</mat-icon>
+        </mat-button-toggle>
 
+        <mat-button-toggle class="botao" id="strikeThrough" mat-icon-button matTooltip="Riscado" [matTooltipShowDelay]="500" [matTooltipHideDelay]="200"
+          (click)="executa('strikeThrough')">
+          <mat-icon aria-label="Riscado">format_strikethrough</mat-icon>
+        </mat-button-toggle>
 
+        <mat-button-toggle class="botao" id="insertOrderedList" mat-icon-button matTooltip="Lista Ordenada" [matTooltipShowDelay]="500" [matTooltipHideDelay]="200"
+          (click)="executa('insertOrderedList')">
+          <mat-icon aria-label="Lista Ordenada">format_list_numbered</mat-icon>
+        </mat-button-toggle>
 
+        <mat-button-toggle class="botao" id="insertUnorderedList" mat-icon-button matTooltip="Lista Desordenada" [matTooltipShowDelay]="500" [matTooltipHideDelay]="200"
+          (click)="executa('insertUnorderedList')">
+          <mat-icon aria-label="Lista desordenada">format_list_bulleted</mat-icon>
+        </mat-button-toggle>
+
+        <mat-button-toggle class="botao" id="justifyLeft" mat-icon-button matTooltip="Alinhar à Esquerda" [matTooltipShowDelay]="500" [matTooltipHideDelay]="200"
+          (click)="executa('justifyLeft')">
+          <mat-icon aria-label="Alinhar à Esquerda">format_align_left</mat-icon>
+        </mat-button-toggle>
+
+        <mat-button-toggle class="botao" id="justifyCenter" mat-icon-button matTooltip="Centralizar" [matTooltipShowDelay]="500" [matTooltipHideDelay]="200"
+          (click)="executa('justifyCenter')">
+          <mat-icon aria-label="Centralizar">format_align_center</mat-icon>
+        </mat-button-toggle>
+
+        <mat-button-toggle class="botao" id="justifyRight" mat-icon-button matTooltip="Alinhar à Direita" [matTooltipShowDelay]="500" [matTooltipHideDelay]="200"
+          (click)="executa('justifyRight')">
+          <mat-icon aria-label="Alinhar à Direita">format_align_right</mat-icon>
+        </mat-button-toggle>
+
+        <mat-button-toggle class="botao" id="justifyFull" mat-icon-button matTooltip="Justificar" [matTooltipShowDelay]="500" [matTooltipHideDelay]="200"
+          (click)="executa('justifyFull')">
+          <mat-icon aria-label="Justificar">format_align_justify</mat-icon>
+        </mat-button-toggle>
+
+        <mat-button-toggle class="botao" id="indent" mat-icon-button matTooltip="Insere Tabulação" [matTooltipShowDelay]="500" [matTooltipHideDelay]="200"
+          (click)="executa('indent')">
+          <mat-icon aria-label="Insere Tabulação">format_indent_increase</mat-icon>
+        </mat-button-toggle>
+
+        <mat-button-toggle class="botao" id="outdent" mat-icon-button matTooltip="Remove Tabulação" [matTooltipShowDelay]="500" [matTooltipHideDelay]="200"
+          (click)="executa('outdent')">
+          <mat-icon aria-label="Remove Tabulação">format_indent_decrease</mat-icon>
+        </mat-button-toggle>
+        <!-- <button mat-flat-button class="botao" (click)="executa('formatBlock', 'blockquote')">Citação</button> -->
       </p>
-      <div contentEditable="true" class="entrada" #entrada (input)="mudou($event.target.innerHTML)"></div>
+      <div contentEditable="true" class="entrada" #entrada (keyup)="pressionou()"></div>
       <p>HTML GERADO:</p>
       <div>{{el.nativeElement.innerHTML}}</div>
     </mat-card-content>

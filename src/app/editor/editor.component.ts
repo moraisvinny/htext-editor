@@ -15,34 +15,37 @@ export class EditorComponent implements OnInit {
   citacaoClicada: boolean = false;
   botaoSelecionado: MatButtonToggle;
 
-
   constructor() { }
 
   ngOnInit() {
+
     this.el.nativeElement.focus();
   }
 
-  executa(comando: string, opcoes, nomeBotao) {
+  executa(comando: string, opcoes) {
 
-    if (this.citacaoClicada && opcoes == 'blockquote') {
-      document.execCommand('formatBlock', false, 'div');
-      this.citacaoClicada = false;
-    } else if (opcoes == 'blockquote') {
-      document.execCommand('formatBlock', false, 'blockquote');
-      document.getElementsByTagName('blockquote')[0].classList.add('citacao');
-      document.getElementsByTagName('blockquote')[0].setAttribute('_ngcontent-c1', "true");
-      this.citacaoClicada = true;
-    } else {
-      document.execCommand(comando, false, opcoes);
-
-      this.botaoSelecionado = this.botoes.find(botao => botao.id === nomeBotao);
-      let estado = document.queryCommandState(comando);
-      this.botaoSelecionado.checked = estado;
-    }
+    document.execCommand(comando, false, opcoes);
+    this.botaoSelecionado = this.botoes.find(botao => botao.id === comando);
+    this.botaoSelecionado.checked = document.queryCommandState(comando);
     this.el.nativeElement.focus();
   }
 
-  mudou(valor) {
+  pressionou() {
+    this.botoes.forEach(botao => botao.checked = document.queryCommandState(botao.id));
+  }
+
+  // TODO
+  citacao() {
+
+  }
+
+  // TODO
+  imagem() {
+
+  }
+
+  // TODO
+  syntaxHighlight(){
 
   }
 
