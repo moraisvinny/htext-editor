@@ -1,9 +1,6 @@
-<div style="padding: 10px">
+<div style="padding: 30px">
 
   <mat-card>
-    <mat-card-title>
-      EDITOR
-    </mat-card-title>
     <mat-card-content>
       <p>
         <mat-button-toggle class="botao" id="bold" mat-icon-button matTooltip="Negrito" [matTooltipShowDelay]="500" [matTooltipHideDelay]="200"
@@ -65,7 +62,28 @@
           (click)="executa('outdent')">
           <mat-icon aria-label="Remove Tabulação">format_indent_decrease</mat-icon>
         </mat-button-toggle>
+
+        <mat-button-toggle class="botao" id="quote" mat-icon-button matTooltip="Citação" [matTooltipShowDelay]="500" [matTooltipHideDelay]="200"
+          (click)="citacao()">
+          <mat-icon aria-label="Citação">format_quote</mat-icon>
+        </mat-button-toggle>
         <!-- <button mat-flat-button class="botao" (click)="executa('formatBlock', 'blockquote')">Citação</button> -->
+      </p>
+      <p>
+        <mat-button-toggle class="botao" id="imagem" mat-icon-button matTooltip="Inserir Imagem" [matTooltipShowDelay]="500" [matTooltipHideDelay]="200"
+          (click)="imagem()">
+          <mat-icon aria-label="Inserir Imagem">insert_photo</mat-icon>
+        </mat-button-toggle>
+
+        <mat-button-toggle class="botao" id="imagem" mat-icon-button matTooltip="Inserir Link" [matTooltipShowDelay]="500" [matTooltipHideDelay]="200"
+          (click)="link()">
+          <mat-icon aria-label="Inserir Link">insert_link</mat-icon>
+        </mat-button-toggle>
+
+        <mat-button-toggle class="botao" id="code" mat-icon-button matTooltip="Inserir Código" [matTooltipShowDelay]="500" [matTooltipHideDelay]="200"
+          (click)="code()">
+          <mat-icon aria-label="Inserir Código">code</mat-icon>
+        </mat-button-toggle>
       </p>
       <div contentEditable="true" class="entrada" #entrada (keyup)="pressionou()"></div>
       <p>HTML GERADO:</p>

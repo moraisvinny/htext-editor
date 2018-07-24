@@ -45,7 +45,11 @@ export class EditorComponent implements OnInit {
   }
 
   // TODO
-  syntaxHighlight(){
+  code(){
+
+  }
+  // TODO
+  link(rotulo, url) {
 
   }
 
