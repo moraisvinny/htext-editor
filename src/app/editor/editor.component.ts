@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, ViewChildren, QueryList } from '@angular/core';
 import { MatButtonToggle } from '@angular/material/button-toggle';
 
 
@@ -10,27 +10,35 @@ import { MatButtonToggle } from '@angular/material/button-toggle';
 export class EditorComponent implements OnInit {
 
   @ViewChild('entrada') el: ElementRef;
-  @ViewChild('negrito') negrito: MatButtonToggle;
+  @ViewChildren(MatButtonToggle) botoes: QueryList<MatButtonToggle>;
+
+  citacaoClicada: boolean = false;
+  botaoSelecionado: MatButtonToggle;
+
 
   constructor() { }
-  citacaoClicada: boolean = false;
 
   ngOnInit() {
     this.el.nativeElement.focus();
   }
 
-  executa(comando:string , opcoes) {
+  executa(comando: string, opcoes, nomeBotao) {
 
-
-    document.execCommand(comando, false, opcoes);
-    this.negrito.checked = false;
-    if(this.citacaoClicada && opcoes == 'blockquote') {
+    if (this.citacaoClicada && opcoes == 'blockquote') {
       document.execCommand('formatBlock', false, 'div');
-    } else if(opcoes == 'blockquote') {
+      this.citacaoClicada = false;
+    } else if (opcoes == 'blockquote') {
+      document.execCommand('formatBlock', false, 'blockquote');
       document.getElementsByTagName('blockquote')[0].classList.add('citacao');
       document.getElementsByTagName('blockquote')[0].setAttribute('_ngcontent-c1', "true");
+      this.citacaoClicada = true;
+    } else {
+      document.execCommand(comando, false, opcoes);
+
+      this.botaoSelecionado = this.botoes.find(botao => botao.id === nomeBotao);
+      let estado = document.queryCommandState(comando);
+      this.botaoSelecionado.checked = estado;
     }
-    this.citacaoClicada ? this.citacaoClicada = false : this.citacaoClicada = true;
     this.el.nativeElement.focus();
   }
 
