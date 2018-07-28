@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, ViewChildren, QueryList } from '@angular/core';
 import { MatButtonToggle } from '@angular/material/button-toggle';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
+import { SheetLinkComponent } from '../sheet-link/sheet-link.component';
 
 
 @Component({
@@ -15,7 +17,7 @@ export class EditorComponent implements OnInit {
   citacaoClicada: boolean = false;
   botaoSelecionado: MatButtonToggle;
 
-  constructor() { }
+  constructor(private bottomSheet: MatBottomSheet) { }
 
   ngOnInit() {
 
@@ -50,7 +52,7 @@ export class EditorComponent implements OnInit {
   }
   // TODO
   link(rotulo, url) {
-
+    this.bottomSheet.open(SheetLinkComponent);
   }
 
 }
