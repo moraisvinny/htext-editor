@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EditorComponent } from './editor/editor.component';
 import { MaterialModule } from './material/material.module';
 import { SheetLinkComponent } from './sheet-link/sheet-link.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -18,6 +19,7 @@ import { SheetLinkComponent } from './sheet-link/sheet-link.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     MaterialModule
   ],
   entryComponents: [SheetLinkComponent],

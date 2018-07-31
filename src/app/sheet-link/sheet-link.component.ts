@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatBottomSheetRef } from '@angular/material/bottom-sheet';
+import { FormControl, Validators } from '@angular/forms';
+import { Link } from '../models/link.model';
 
 @Component({
   selector: 'app-sheet-link',
@@ -8,12 +10,21 @@ import { MatBottomSheetRef } from '@angular/material/bottom-sheet';
 })
 export class SheetLinkComponent {
 
-  constructor(private bottomSheetRef: MatBottomSheetRef<SheetLinkComponent>) {}
+  link = new FormControl('',[Validators.required]);
+  rotulo = new FormControl('');
 
-  openLink(event: MouseEvent): void {
-    this.bottomSheetRef.dismiss();
-    event.preventDefault();
+  constructor(private bottomSheetRef: MatBottomSheetRef<SheetLinkComponent>) {
+
   }
 
+  enviaLink() {
+
+    if(this.link.errors) {
+      return;
+    }
+    const retorno: Link = new Link(this.rotulo.value, this.link.value);
+    this.bottomSheetRef.dismiss(retorno);
+
+  }
 
 }

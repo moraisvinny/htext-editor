@@ -2,12 +2,13 @@ import { Component, OnInit, ViewChild, ElementRef, ViewChildren, QueryList } fro
 import { MatButtonToggle } from '@angular/material/button-toggle';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { SheetLinkComponent } from '../sheet-link/sheet-link.component';
+import { Link } from '../models/link.model';
 
 
 @Component({
   selector: 'app-editor',
   templateUrl: './editor.component.html',
-  styleUrls: ['./editor.component.css']
+  styleUrls: ['./editor.component.css'],
 })
 export class EditorComponent implements OnInit {
 
@@ -21,7 +22,7 @@ export class EditorComponent implements OnInit {
 
   ngOnInit() {
 
-    this.el.nativeElement.focus();
+    this.focus();
   }
 
   executa(comando: string, opcoes) {
@@ -29,7 +30,7 @@ export class EditorComponent implements OnInit {
     document.execCommand(comando, false, opcoes);
     this.botaoSelecionado = this.botoes.find(botao => botao.id === comando);
     this.botaoSelecionado.checked = document.queryCommandState(comando);
-    this.el.nativeElement.focus();
+    this.focus();
   }
 
   pressionou() {
@@ -47,12 +48,27 @@ export class EditorComponent implements OnInit {
   }
 
   // TODO
-  code(){
+  code() {
 
   }
   // TODO
-  link(rotulo, url) {
-    this.bottomSheet.open(SheetLinkComponent);
+  link() {
+    this.bottomSheet
+      .open(SheetLinkComponent)
+      .afterDismissed()
+      .subscribe({ next: ((link: Link) => this.geraLink(link)) })
+
   }
 
+  private geraLink(link: Link) {
+
+    let anchor = `<a href='${link.getLink()}'>${link.getRotulo() ? link.getRotulo() : link.getLink()}</a>`;
+    this.el.nativeElement.innerHTML = `${this.el.nativeElement.innerHTML} ${anchor}`;
+    this.botoes.find(botao => botao.id === 'link').checked = false;
+    this.focus();
+  }
+
+  private focus() {
+    this.el.nativeElement.focus();
+  }
 }

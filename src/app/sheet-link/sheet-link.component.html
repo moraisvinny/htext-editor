@@ -1,3 +1,14 @@
 <p>
-  sheet-link works!
+  <mat-form-field class="input-sheet">
+    <input matInput [formControl]="link" type="url" placeholder="Insira o link (obrigatório)">
+  </mat-form-field>
+</p>
+<p>
+  <mat-form-field class="input-sheet">
+    <input matInput [formControl]="rotulo" type="text" placeholder="Insira o rótulo">
+  </mat-form-field>
+</p>
+<p>
+  <button mat-flat-button (click)="enviaLink()">Enviar</button>
+
 </p>
