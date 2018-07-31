@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { MatBottomSheetRef } from '@angular/material/bottom-sheet';
+import { Component, Inject } from '@angular/core';
+import { MatBottomSheetRef, MAT_BOTTOM_SHEET_DATA } from '@angular/material';
 import { FormControl, Validators } from '@angular/forms';
 import { Link } from '../models/link.model';
 
@@ -13,17 +13,19 @@ export class SheetLinkComponent {
   link = new FormControl('',[Validators.required]);
   rotulo = new FormControl('');
 
-  constructor(private bottomSheetRef: MatBottomSheetRef<SheetLinkComponent>) {
+  constructor(private bottomSheetRef: MatBottomSheetRef<SheetLinkComponent>, @Inject(MAT_BOTTOM_SHEET_DATA) public data: any) {
 
   }
 
-  enviaLink() {
+  envia() {
 
     if(this.link.errors) {
       return;
     }
     const retorno: Link = new Link(this.rotulo.value, this.link.value);
     this.bottomSheetRef.dismiss(retorno);
+
+
 
   }
 

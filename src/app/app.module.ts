@@ -7,6 +7,7 @@ import { EditorComponent } from './editor/editor.component';
 import { MaterialModule } from './material/material.module';
 import { SheetLinkComponent } from './sheet-link/sheet-link.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { IgnoraSanitizePipe } from './ignora-sanitize.pipe';
 
 
 
@@ -14,13 +15,14 @@ import { ReactiveFormsModule } from '@angular/forms';
   declarations: [
     AppComponent,
     EditorComponent,
-    SheetLinkComponent
+    SheetLinkComponent,
+    IgnoraSanitizePipe,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    MaterialModule
+    MaterialModule,
   ],
   entryComponents: [SheetLinkComponent],
   providers: [],

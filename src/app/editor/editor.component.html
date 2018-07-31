@@ -23,28 +23,28 @@
           <mat-icon aria-label="Riscado">format_strikethrough</mat-icon>
         </mat-button-toggle>
 
-        <mat-button-toggle class="botao" id="insertOrderedList" mat-icon-button matTooltip="Lista Ordenada" [matTooltipShowDelay]="500" [matTooltipHideDelay]="200"
-          (click)="executa('insertOrderedList')">
+        <mat-button-toggle class="botao" id="insertOrderedList" mat-icon-button matTooltip="Lista Ordenada" [matTooltipShowDelay]="500"
+          [matTooltipHideDelay]="200" (click)="executa('insertOrderedList')">
           <mat-icon aria-label="Lista Ordenada">format_list_numbered</mat-icon>
         </mat-button-toggle>
 
-        <mat-button-toggle class="botao" id="insertUnorderedList" mat-icon-button matTooltip="Lista Desordenada" [matTooltipShowDelay]="500" [matTooltipHideDelay]="200"
-          (click)="executa('insertUnorderedList')">
+        <mat-button-toggle class="botao" id="insertUnorderedList" mat-icon-button matTooltip="Lista Desordenada" [matTooltipShowDelay]="500"
+          [matTooltipHideDelay]="200" (click)="executa('insertUnorderedList')">
           <mat-icon aria-label="Lista desordenada">format_list_bulleted</mat-icon>
         </mat-button-toggle>
 
-        <mat-button-toggle class="botao" id="justifyLeft" mat-icon-button matTooltip="Alinhar à Esquerda" [matTooltipShowDelay]="500" [matTooltipHideDelay]="200"
-          (click)="executa('justifyLeft')">
+        <mat-button-toggle class="botao" id="justifyLeft" mat-icon-button matTooltip="Alinhar à Esquerda" [matTooltipShowDelay]="500"
+          [matTooltipHideDelay]="200" (click)="executa('justifyLeft')">
           <mat-icon aria-label="Alinhar à Esquerda">format_align_left</mat-icon>
         </mat-button-toggle>
 
-        <mat-button-toggle class="botao" id="justifyCenter" mat-icon-button matTooltip="Centralizar" [matTooltipShowDelay]="500" [matTooltipHideDelay]="200"
-          (click)="executa('justifyCenter')">
+        <mat-button-toggle class="botao" id="justifyCenter" mat-icon-button matTooltip="Centralizar" [matTooltipShowDelay]="500"
+          [matTooltipHideDelay]="200" (click)="executa('justifyCenter')">
           <mat-icon aria-label="Centralizar">format_align_center</mat-icon>
         </mat-button-toggle>
 
-        <mat-button-toggle class="botao" id="justifyRight" mat-icon-button matTooltip="Alinhar à Direita" [matTooltipShowDelay]="500" [matTooltipHideDelay]="200"
-          (click)="executa('justifyRight')">
+        <mat-button-toggle class="botao" id="justifyRight" mat-icon-button matTooltip="Alinhar à Direita" [matTooltipShowDelay]="500"
+          [matTooltipHideDelay]="200" (click)="executa('justifyRight')">
           <mat-icon aria-label="Alinhar à Direita">format_align_right</mat-icon>
         </mat-button-toggle>
 
@@ -87,8 +87,7 @@
       </p>
       <div contentEditable="true" class="entrada" #entrada (keyup)="pressionou()"></div>
       <p>HTML GERADO:</p>
-      <div>{{el.nativeElement.innerHTML}}</div>
+        <div>{{el.nativeElement.innerHTML}}</div>
     </mat-card-content>
   </mat-card>
 </div>
-

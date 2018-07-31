@@ -12,10 +12,21 @@
 
 }
 
-.citacao {
+blockquote {
   width: fit-content;
   border-radius: 3px;
-  background: #CCCCCC;
+  background: #DDDDDD;
+  margin-left: 15px;
   padding: 5px;
+
+}
+
+code {
+  width: fit-content;
+  border-radius: 3px;
+  background: #EEEEEE;
+  padding: 5px;
+  margin-left: 15px;
+  font-family: "Courier 10 Pitch",Courier,monospace;
 
 }
