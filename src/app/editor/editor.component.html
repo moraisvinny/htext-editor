@@ -5,84 +5,84 @@
       <p>
         <mat-button-toggle class="botao" id="bold" mat-icon-button matTooltip="Negrito" [matTooltipShowDelay]="500" [matTooltipHideDelay]="200"
           (click)="executa('bold')">
-          <mat-icon aria-label="Negrito">format_bold</mat-icon>
+          <mat-icon svgIcon="format_bold" aria-label="Negrito"></mat-icon>
         </mat-button-toggle>
 
         <mat-button-toggle class="botao" id="italic" mat-icon-button matTooltip="Itálico" [matTooltipShowDelay]="500" [matTooltipHideDelay]="200"
           (click)="executa('italic')">
-          <mat-icon aria-label="Italico">format_italic</mat-icon>
+          <mat-icon svgIcon="format_italic" aria-label="Italico"></mat-icon>
         </mat-button-toggle>
 
         <mat-button-toggle class="botao" id="underline" mat-icon-button matTooltip="Sublinhado" [matTooltipShowDelay]="500" [matTooltipHideDelay]="200"
           (click)="executa('underline')">
-          <mat-icon aria-label="Sublinhado">format_underlined</mat-icon>
+          <mat-icon aria-label="Sublinhado" svgIcon="format_underlined"></mat-icon>
         </mat-button-toggle>
 
         <mat-button-toggle class="botao" id="strikeThrough" mat-icon-button matTooltip="Riscado" [matTooltipShowDelay]="500" [matTooltipHideDelay]="200"
           (click)="executa('strikeThrough')">
-          <mat-icon aria-label="Riscado">format_strikethrough</mat-icon>
+          <mat-icon aria-label="Riscado" svgIcon="format_strikethrough"></mat-icon>
         </mat-button-toggle>
 
         <mat-button-toggle class="botao" id="insertOrderedList" mat-icon-button matTooltip="Lista Ordenada" [matTooltipShowDelay]="500"
           [matTooltipHideDelay]="200" (click)="executa('insertOrderedList')">
-          <mat-icon aria-label="Lista Ordenada">format_list_numbered</mat-icon>
+          <mat-icon aria-label="Lista Ordenada" svgIcon="format_list_numbered"></mat-icon>
         </mat-button-toggle>
 
         <mat-button-toggle class="botao" id="insertUnorderedList" mat-icon-button matTooltip="Lista Desordenada" [matTooltipShowDelay]="500"
           [matTooltipHideDelay]="200" (click)="executa('insertUnorderedList')">
-          <mat-icon aria-label="Lista desordenada">format_list_bulleted</mat-icon>
+          <mat-icon aria-label="Lista desordenada" svgIcon="format_list_bulleted"></mat-icon>
         </mat-button-toggle>
 
         <mat-button-toggle class="botao" id="justifyLeft" mat-icon-button matTooltip="Alinhar à Esquerda" [matTooltipShowDelay]="500"
           [matTooltipHideDelay]="200" (click)="executa('justifyLeft')">
-          <mat-icon aria-label="Alinhar à Esquerda">format_align_left</mat-icon>
+          <mat-icon aria-label="Alinhar à Esquerda" svgIcon="format_align_left"></mat-icon>
         </mat-button-toggle>
 
         <mat-button-toggle class="botao" id="justifyCenter" mat-icon-button matTooltip="Centralizar" [matTooltipShowDelay]="500"
           [matTooltipHideDelay]="200" (click)="executa('justifyCenter')">
-          <mat-icon aria-label="Centralizar">format_align_center</mat-icon>
+          <mat-icon aria-label="Centralizar" svgIcon="format_align_center"></mat-icon>
         </mat-button-toggle>
 
         <mat-button-toggle class="botao" id="justifyRight" mat-icon-button matTooltip="Alinhar à Direita" [matTooltipShowDelay]="500"
           [matTooltipHideDelay]="200" (click)="executa('justifyRight')">
-          <mat-icon aria-label="Alinhar à Direita">format_align_right</mat-icon>
+          <mat-icon aria-label="Alinhar à Direita" svgIcon="format_align_right"></mat-icon>
         </mat-button-toggle>
 
         <mat-button-toggle class="botao" id="justifyFull" mat-icon-button matTooltip="Justificar" [matTooltipShowDelay]="500" [matTooltipHideDelay]="200"
           (click)="executa('justifyFull')">
-          <mat-icon aria-label="Justificar">format_align_justify</mat-icon>
+          <mat-icon aria-label="Justificar" svgIcon="format_align_justify"></mat-icon>
         </mat-button-toggle>
 
         <mat-button-toggle class="botao" id="indent" mat-icon-button matTooltip="Insere Tabulação" [matTooltipShowDelay]="500" [matTooltipHideDelay]="200"
           (click)="executa('indent')">
-          <mat-icon aria-label="Insere Tabulação">format_indent_increase</mat-icon>
+          <mat-icon aria-label="Insere Tabulação" svgIcon="format_indent_increase"></mat-icon>
         </mat-button-toggle>
 
         <mat-button-toggle class="botao" id="outdent" mat-icon-button matTooltip="Remove Tabulação" [matTooltipShowDelay]="500" [matTooltipHideDelay]="200"
           (click)="executa('outdent')">
-          <mat-icon aria-label="Remove Tabulação">format_indent_decrease</mat-icon>
+          <mat-icon aria-label="Remove Tabulação" svgIcon="format_indent_decrease"></mat-icon>
         </mat-button-toggle>
 
         <mat-button-toggle class="botao" id="quote" mat-icon-button matTooltip="Citação" [matTooltipShowDelay]="500" [matTooltipHideDelay]="200"
           (click)="citacao()">
-          <mat-icon aria-label="Citação">format_quote</mat-icon>
+          <mat-icon aria-label="Citação" svgIcon="format_quote"></mat-icon>
         </mat-button-toggle>
         <!-- <button mat-flat-button class="botao" (click)="executa('formatBlock', 'blockquote')">Citação</button> -->
       </p>
       <p>
         <mat-button-toggle class="botao" id="imagem" mat-icon-button matTooltip="Inserir Imagem" [matTooltipShowDelay]="500" [matTooltipHideDelay]="200"
           (click)="imagem()">
-          <mat-icon aria-label="Inserir Imagem">insert_photo</mat-icon>
+          <mat-icon aria-label="Inserir Imagem" svgIcon="insert_photo"></mat-icon>
         </mat-button-toggle>
 
         <mat-button-toggle class="botao" id="link" mat-icon-button matTooltip="Inserir Link" [matTooltipShowDelay]="500" [matTooltipHideDelay]="200"
           (click)="link()">
-          <mat-icon aria-label="Inserir Link">insert_link</mat-icon>
+          <mat-icon aria-label="Inserir Link" svgIcon="insert_link"></mat-icon>
         </mat-button-toggle>
 
         <mat-button-toggle class="botao" id="code" mat-icon-button matTooltip="Inserir Código" [matTooltipShowDelay]="500" [matTooltipHideDelay]="200"
           (click)="code()">
-          <mat-icon aria-label="Inserir Código">code</mat-icon>
+          <mat-icon aria-label="Inserir Código" svgIcon="code"></mat-icon>
         </mat-button-toggle>
       </p>
       <div contentEditable="true" class="entrada" #entrada (keyup)="pressionou()"></div>

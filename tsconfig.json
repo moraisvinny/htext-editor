@@ -16,13 +16,5 @@
       "es2017",
       "dom"
     ],
-    "paths": {
-      "testando": [
-        "dist/testando"
-      ],
-      "testando/*": [
-        "dist/testando/*"
-      ]
-    }
   }
 }
