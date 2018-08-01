@@ -1,0 +1,1 @@
+export * from './src/app/editor/editor.module';
