@@ -1,8 +1,9 @@
 import { Component, OnInit, ViewChild, ElementRef, ViewChildren, QueryList } from '@angular/core';
 import { MatButtonToggle } from '@angular/material/button-toggle';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
-import { SheetLinkComponent } from '../sheet-link/sheet-link.component';
-import { Link } from '../models/link.model';
+import { SheetLinkComponent } from './sheet-link/sheet-link.component';
+import { Link } from './models/link.model';
+
 
 
 @Component({
@@ -12,11 +13,10 @@ import { Link } from '../models/link.model';
 })
 export class EditorComponent implements OnInit {
 
-  @ViewChild('entrada') private el: ElementRef;
-  @ViewChildren(MatButtonToggle) private botoes: QueryList<MatButtonToggle>;
+  @ViewChild('entrada') el: ElementRef;
+  @ViewChildren(MatButtonToggle) botoes: QueryList<MatButtonToggle>;
 
-  private citacaoClicada: boolean = false;
-  private botaoSelecionado: MatButtonToggle;
+  botaoSelecionado: MatButtonToggle;
 
   constructor(private bottomSheet: MatBottomSheet) { }
 
@@ -25,23 +25,23 @@ export class EditorComponent implements OnInit {
     this.focus();
   }
 
-  private executa(comando: string, opcoes) {
+  executa(comando: string) {
 
-    document.execCommand(comando, false, opcoes);
+    document.execCommand(comando, false, null);
     this.botaoSelecionado = this.botoes.find(botao => botao.id === comando);
     this.botaoSelecionado.checked = document.queryCommandState(comando);
     this.focus();
   }
 
-  private pressionou() {
+  pressionou() {
     this.botoes.forEach(botao => botao.checked = document.queryCommandState(botao.id));
   }
 
-  private citacao() {
+  citacao() {
     this.el.nativeElement.innerHTML = `${this.el.nativeElement.innerHTML} <div><br></div><p><blockquote _ngcontent-c1>  citação aqui...</blockquote></p><div><br></div>`;
   }
 
-  private imagem() {
+  imagem() {
     this.bottomSheet
       .open(SheetLinkComponent, { data: { tipo: 'image' } })
       .afterDismissed()
@@ -49,12 +49,12 @@ export class EditorComponent implements OnInit {
   }
 
 
-  private code() {
+  code() {
     this.el.nativeElement.innerHTML = `${this.el.nativeElement.innerHTML} <div><br></div><pre><code _ngcontent-c1>codigo aqui...</code></pre><div><br></div>`;
     this.focus();
   }
 
-  private link() {
+  link() {
     this.bottomSheet
       .open(SheetLinkComponent, { data: { tipo: 'link' } })
       .afterDismissed()
