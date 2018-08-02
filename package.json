@@ -12,6 +12,7 @@
   },
   "private": false,
   "dependencies": {
+    "@angular/animations": "^6.0.3",
     "@angular/common": "^6.0.3",
     "@angular/compiler": "^6.0.3",
     "@angular/core": "^6.0.3",
@@ -50,7 +51,6 @@
     "typescript": "~2.7.2"
   },
   "peerDependencies": {
-    "@angular/animations": "^6.0.3",
     "@angular/cdk": "^6.2.0",
     "@angular/material": "^6.4.0",
     "@mdi/svg": "^2.5.94"

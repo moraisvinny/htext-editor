@@ -10,6 +10,7 @@
     "@angular/platform-browser",
     "@angular/platform-browser-dynamic",
     "@angular/router",
+    "@angular/animations",
     "core-js",
     "rxjs",
     "zone.js"
