@@ -13,6 +13,7 @@ addons:
 
 before_script:
   - npm install -g @angular/cli
+  - npm install @angular/cdk @angular/material @mdi/svg
 
 script:
   - ng test --watch false
