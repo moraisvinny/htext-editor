@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SheetLinkComponent } from './sheet-link.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule } from '../material/material.module';
+import { MatBottomSheetRef, MAT_BOTTOM_SHEET_DATA } from '@angular/material';
 
 describe('SheetLinkComponent', () => {
   let component: SheetLinkComponent;
@@ -8,9 +11,17 @@ describe('SheetLinkComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SheetLinkComponent ]
+      imports: [
+        ReactiveFormsModule,
+        MaterialModule
+      ],
+      providers: [
+        { provide: MatBottomSheetRef, useValue: {} },
+        { provide: MAT_BOTTOM_SHEET_DATA, useValue: [] },
+      ],
+      declarations: [SheetLinkComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
