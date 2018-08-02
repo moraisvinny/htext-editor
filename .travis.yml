@@ -1,3 +1,14 @@
 language: node_js
 node_js:
   - "8"
+sudo: required
+
+cache:
+  directories:
+    - node_modules
+
+addons:
+  chrome: stable
+
+ script:
+  - ng test --watch false

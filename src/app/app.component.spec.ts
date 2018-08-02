@@ -5,7 +5,6 @@ import { EditorModule } from './editor/editor.module';
 describe('AppComponent', () => {
   beforeEach(async(() => {
 
-    editorComponent: EditorComponent;
     TestBed.configureTestingModule({
       declarations: [
         AppComponent
