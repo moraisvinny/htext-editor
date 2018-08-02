@@ -1,6 +1,5 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { EditorComponent } from './editor/editor.component';
 import { EditorModule } from './editor/editor.module';
 describe('AppComponent', () => {
   beforeEach(async(() => {

@@ -18,7 +18,7 @@ export class EditorComponent implements OnInit {
   @ViewChild('entrada') el: ElementRef;
   @ViewChildren(MatButtonToggle) botoes: QueryList<MatButtonToggle>;
 
-  botaoSelecionado: MatButtonToggle;
+  public botaoSelecionado: MatButtonToggle;
 
   constructor(
     private bottomSheet: MatBottomSheet,
@@ -113,11 +113,12 @@ export class EditorComponent implements OnInit {
 
   }
   executa(comando: string) {
-
-    document.execCommand(comando, false, null);
-    this.botaoSelecionado = this.botoes.find(botao => botao.id === comando);
-    this.botaoSelecionado.checked = document.queryCommandState(comando);
-    this.focus();
+    return true;
+    // document.execCommand(comando, false, null);
+    // this.botaoSelecionado = this.botoes.find(botao => botao.id === comando);
+    // console.log(this.botaoSelecionado);
+    // this.botaoSelecionado.checked = document.queryCommandState(comando);
+    // this.focus();
   }
 
   pressionou() {

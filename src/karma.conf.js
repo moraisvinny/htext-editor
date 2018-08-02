@@ -36,7 +36,10 @@ module.exports = function (config) {
         ]
       }
     },
-    browsers: ['ChromeHeadless'],
-    singleRun: true
+    //browsers: ['ChromeHeadless'],
+    browsers: ['Chrome'],
+    //singleRun: true
+    singleRun: false
+
   });
 };
