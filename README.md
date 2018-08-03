@@ -125,10 +125,6 @@ Simples né?!
 * Ng-packagr
 * NPM
 
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
 ## Versionamento
 
 Nós usamos [SemVer](http://semver.org/) para o versionamento. Para versões disponíveis acesse: [tags](https://github.com/moraisvinny/htext-editor/tags). 
