@@ -1,6 +1,7 @@
 # Htext-Editor
-[![Build Status](https://travis-ci.org/moraisvinny/htext-editor.svg?branch=master)](https://travis-ci.org/moraisvinny/htext-editor)   [![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)](https://opensource.org/licenses/MIT)
+[![Build Status](https://travis-ci.org/moraisvinny/htext-editor.svg?branch=master)](https://travis-ci.org/moraisvinny/htext-editor)      [![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)](https://opensource.org/licenses/MIT)
 
+![alt text](https://res.cloudinary.com/moraisvinny-com/image/upload/v1533331725/htext-editor.png "Exemplo de utilização")
 
 
 Htext-Editor é um compmente Angular que consiste em um editor de Hiper Texto que gera código HTML baseado na formatação inserida.
