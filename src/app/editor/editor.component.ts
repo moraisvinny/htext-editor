@@ -21,7 +21,7 @@ export class EditorComponent implements OnInit {
   public botaoSelecionado: MatButtonToggle;
 
   constructor(
-    private bottomSheet: MatBottomSheet,
+    public bottomSheet: MatBottomSheet,
     private iconRegistry: MatIconRegistry,
     private sanitizer: DomSanitizer) { }
 
@@ -113,16 +113,17 @@ export class EditorComponent implements OnInit {
 
   }
   executa(comando: string) {
-    return true;
-    // document.execCommand(comando, false, null);
-    // this.botaoSelecionado = this.botoes.find(botao => botao.id === comando);
-    // console.log(this.botaoSelecionado);
-    // this.botaoSelecionado.checked = document.queryCommandState(comando);
-    // this.focus();
+
+    document.execCommand(comando, false, null);
+    this.botoes
+      .find(botao => botao.id === comando)
+      .checked = document.queryCommandState(comando);
+    this.focus();
   }
 
   pressionou() {
     this.botoes.forEach(botao => botao.checked = document.queryCommandState(botao.id));
+    return 'yeah';
   }
 
   citacao() {

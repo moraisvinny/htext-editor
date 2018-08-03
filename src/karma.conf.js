@@ -36,10 +36,10 @@ module.exports = function (config) {
         ]
       }
     },
-    //browsers: ['ChromeHeadless'],
-    browsers: ['Chrome'],
-    //singleRun: true
-    singleRun: false
+    browsers: ['ChromeHeadless'],
+    //browsers: ['Chrome'],
+    singleRun: true
+    //singleRun: false
 
   });
 };
