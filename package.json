@@ -1,6 +1,25 @@
 {
   "name": "htext-editor",
-  "version": "0.0.0",
+  "version": "1.1.0",
+  "description": "Htext-Editor é um compmente Angular que consiste em um editor de Hiper Texto que gera código HTML baseado na formatação inserida.",
+  "keywords": [
+    "Hyper-Text",
+    "editor",
+    "html",
+    "html editor",
+    "angular"
+  ],
+  "homepage": "https://github.com/moraisvinny/htext-editor#htext-editor",
+  "bugs": {
+    "url": "https://github.com/moraisvinny/htext-editor/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Vinicius Morais",
+    "email": "vinicius.reis.morais@gmail.com",
+    "url": "https://moraisvinny.com"
+  },
+  "repository": "github:moraisvinny/htext-editor",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
